@@ -23,7 +23,7 @@ pipeline {
       }
       stage('Dockerhub Repository') {
          steps {
-            sh 'docker push luqzi/todo-app:latest
+            sh 'docker push luqzi/todo-app:latest'
          }
       }
       stage('Deploy to VM2') {
