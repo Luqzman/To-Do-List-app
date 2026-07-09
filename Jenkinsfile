@@ -29,11 +29,12 @@ pipeline {
       stage('Deploy to VM2') {
          steps {
              sh '''
-               ssh -o StrictHostKeyChecking=no ubuntu@65.0.124.23
+               ssh -o StrictHostKeyChecking=no ubuntu@65.0.124.23 "
                docker stop todo-app || true
                docker rm todo-app || true
                docker pull luqzi/todo-app:latest
                docker run -d --name todo-app -p 3000:3000 luqzi/todo-app:latest
+               "
             '''
          }
       }
