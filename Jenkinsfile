@@ -3,30 +3,30 @@ pipeline {
    stages {
       stage('Checkout Code') {
          steps {
-            // Git checkout
+             Git checkout
          }
       }
       stage('Install Dependencies') {
          steps {
-            // npm install
+             npm install
          }
       }
       stage('Build Application') {
          steps {
-            // npm run build
+             npm run build
          }
       }
       stage('Docker Build') {
          steps {
-            // docker build
+             docker build
          }
       }
       stage('Deploy to VM2') {
          steps {
-            // ssh
-            // docker stop
-            // docker rm
-            // docker run
+             ssh
+             docker stop
+             docker rm
+             docker run
          }
       }
    }
